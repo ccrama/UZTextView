@@ -704,6 +704,7 @@
 #pragma mark - Touch event(Override)
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+isTouching = YES;
 	UITouch *touch = [touches anyObject];
     [self setNeedsDisplay];
 #if !defined(TARGET_OS_TV)
@@ -779,6 +780,7 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+isTouching = NO;
 	if (_longPressGestureRecognizer.state == UIGestureRecognizerStatePossible) {
 		if (_tappedLinkAttribute[NSLinkAttributeName] && _tappedLinkRange.length) {
 			if ([self.delegate respondsToSelector:@selector(textView:didClickLinkAttribute:)]) {
@@ -865,6 +867,8 @@
 - (BOOL)resignFirstResponder {
 	return [super resignFirstResponder];
 }
+
+- (BOOL) isTouching;
 
 - (BOOL)canBecomeFirstResponder {
 	return YES;
