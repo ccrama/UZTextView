@@ -145,7 +145,7 @@ typedef NS_ENUM(NSUInteger, UZTextViewStatus) {
 	CTFrameRef						_frame;
 	CGRect							_contentRect;
 	CFStringTokenizerRef			_tokenizer;
-	BOOL                                    isTouching;
+	@public BOOL                                    isTouching;
 	
 	// Tap link attribute
 	NSRange							_tappedLinkRange;
