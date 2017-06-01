@@ -296,6 +296,7 @@ typedef NS_ENUM(NSUInteger, UZTextViewStatus) {
  * \return YES if the receiver's text is selected or NO if it's not.
  */
 - (BOOL)cancelSelectedText;
+- (BOOL) isTouching;
 
 /**
  * Returns the frame rectangle, which describes the cursor location and size.
