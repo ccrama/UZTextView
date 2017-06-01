@@ -868,7 +868,7 @@ isTouching = NO;
 	return [super resignFirstResponder];
 }
 
-- (BOOL) isTouching;
+BOOL isTouching;
 
 - (BOOL)canBecomeFirstResponder {
 	return YES;
