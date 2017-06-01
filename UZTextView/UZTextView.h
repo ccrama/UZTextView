@@ -145,6 +145,7 @@ typedef NS_ENUM(NSUInteger, UZTextViewStatus) {
 	CTFrameRef						_frame;
 	CGRect							_contentRect;
 	CFStringTokenizerRef			_tokenizer;
+	BOOL                                    isTouching;
 	
 	// Tap link attribute
 	NSRange							_tappedLinkRange;
@@ -296,7 +297,6 @@ typedef NS_ENUM(NSUInteger, UZTextViewStatus) {
  * \return YES if the receiver's text is selected or NO if it's not.
  */
 - (BOOL)cancelSelectedText;
-- (BOOL) isTouching;
 
 /**
  * Returns the frame rectangle, which describes the cursor location and size.
